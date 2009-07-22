@@ -1,0 +1,6 @@
+test -z "$CC" && CC=gcc
+test -z "$CXX" && CXX=g++
+test -z "$CFLAGS" && CFLAGS="-Wall -Wno-sign-compare -Wno-unused-function -g -march=nocona -O3 -pipe -fomit-frame-pointer -ffast-math -mmmx -msse -msse2 -msse3 -mfpmath=sse,387"
+test -z "$CXXFLAGS" && CXXFLAGS="${CFLAGS}"
+test -z "$CPPFLAGS" && CPPFLAGS="-I$HOME/usr/include -I/usr/local"
+test -z "$LDFLAGS" && LDFLAGS="-L$HOME/usr/lib -L/usr/lib/sse2"
