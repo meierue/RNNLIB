@@ -25,8 +25,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #include <map>
 #include <netcdfcpp.h>
 #include <boost/bimap.hpp>
-#include "DataSequence.h"
-#include "Helpers.h"
+#include "DataSequence.hpp"
+#include "Helpers.hpp"
 
 #define SEQ_IT vector<DataSequence*>::iterator
 #define CONST_SEQ_IT vector<DataSequence*>::const_iterator

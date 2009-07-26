@@ -19,8 +19,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #define _INCLUDED_TranscriptionLayer_h  
 
 #include <boost/bimap.hpp>
-#include "SoftmaxLayer.h"
-#include "StringAlignment.h"
+#include "SoftmaxLayer.hpp"
+#include "StringAlignment.hpp"
 
 struct TranscriptionLayer: public SoftmaxLayer
 {	

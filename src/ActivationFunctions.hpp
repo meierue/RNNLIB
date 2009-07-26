@@ -21,7 +21,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #include <numeric>
 #include <limits>
 #include <boost/array.hpp>
-#include "LogDouble.h"
+#include "LogDouble.hpp"
 
 using namespace std;
 using namespace boost;

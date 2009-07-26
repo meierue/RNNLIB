@@ -19,7 +19,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #define _INCLUDED_Connection_h  
 
 #include <iostream>
-#include "Named.h"
+#include "Named.hpp"
 
 struct Connection: public Named
 {

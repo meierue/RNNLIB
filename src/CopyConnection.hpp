@@ -18,7 +18,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_CopyConnection_h  
 #define _INCLUDED_CopyConnection_h  
 
-#include "Connection.h"
+#include "Connection.hpp"
 
 struct CopyConnection: public Connection
 {

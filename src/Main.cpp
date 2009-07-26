@@ -17,16 +17,16 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 
 #include <boost/iostreams/tee.hpp>
 #include <boost/iostreams/stream.hpp>
-#include "MultilayerNet.h"
-#include "NetcdfDataset.h"
-#include "GradientCheck.h"
-#include "WeightContainer.h"
-#include "SteepestDescent.h"
-#include "Rprop.h"
-#include "Trainer.h"
-#include "MemoryNet.h"
-#include "CodeNet.h"
-#include "PmNet.h"
+#include "MultilayerNet.hpp"
+#include "NetcdfDataset.hpp"
+#include "GradientCheck.hpp"
+#include "WeightContainer.hpp"
+#include "SteepestDescent.hpp"
+#include "Rprop.hpp"
+#include "Trainer.hpp"
+#include "MemoryNet.hpp"
+#include "CodeNet.hpp"
+#include "PmNet.hpp"
 
 typedef boost::iostreams::tee_device<ostream, ofstream> TeeDev;
 typedef boost::iostreams::stream<TeeDev> TeeStream;

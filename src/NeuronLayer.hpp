@@ -18,7 +18,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_NeuronLayer_h  
 #define _INCLUDED_NeuronLayer_h  
 
-#include "Layer.h"
+#include "Layer.hpp"
 
 
 template <class F> struct NeuronLayer: public Layer

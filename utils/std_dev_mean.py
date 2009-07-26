@@ -2,6 +2,7 @@
 import numpy
 from math import sqrt
 import sys
+
 vals = []
 for l in sys.stdin.readlines():
 	vals.append(float(l))

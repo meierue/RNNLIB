@@ -18,8 +18,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_LinearOutputLayer_h  
 #define _INCLUDED_LinearOutputLayer_h  
 
-#include "OutputLayer.h"
-#include "Helpers.h"
+#include "OutputLayer.hpp"
+#include "Helpers.hpp"
 
 struct LinearOutputLayer: public OutputLayer
 {	

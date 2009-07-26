@@ -18,7 +18,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_AutoregressionLayer_h  
 #define _INCLUDED_AutoregressionLayer_h  
 
-#include "RegressionLayer.h"
+#include "RegressionLayer.hpp"
 
 struct AutoregressionLayer: public LinearOutputLayer
 {

@@ -18,7 +18,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_BlockLayer_h  
 #define _INCLUDED_BlockLayer_h  
 
-#include "Layer.h"
+#include "Layer.hpp"
 
 struct BlockLayer: public Layer
 {

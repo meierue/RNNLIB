@@ -18,7 +18,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_SeqBuffer_h  
 #define _INCLUDED_SeqBuffer_h  
 
-#include "MultiArray.h"
+#include "MultiArray.hpp"
 
 template <class R> struct CoordIterator
 {

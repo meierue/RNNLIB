@@ -18,8 +18,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_RegressionLayer_h  
 #define _INCLUDED_RegressionLayer_h  
 
-#include "LinearOutputLayer.h"
-#include "Helpers.h"
+#include "LinearOutputLayer.hpp"
+#include "Helpers.hpp"
 
 struct RegressionLayer: public LinearOutputLayer
 {

@@ -19,7 +19,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #define _INCLUDED_ClassificationLayer_h  
 
 #include <boost/bimap.hpp>
-#include "SoftmaxLayer.h"
+#include "SoftmaxLayer.hpp"
 
 struct ClassificationLayer: public SoftmaxLayer
 {

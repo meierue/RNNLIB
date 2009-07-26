@@ -20,19 +20,19 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 
 #include <boost/lambda/lambda.hpp>
 #include <boost/lambda/bind.hpp>
-#include "InputLayer.h"
-#include "BiasLayer.h"
-#include "OutputLayer.h"
-#include "NeuronLayer.h"
-#include "FullConnection.h"
-#include "ActivationFunctions.h"
-#include "LstmLayer.h"
-#include "BlockLayer.h"
-#include "NetcdfDataset.h"
-#include "SamplingLayer.h"
-#include "GatherLayer.h"
-#include "CollapseLayer.h"
-#include "CopyConnection.h"
+#include "InputLayer.hpp"
+#include "BiasLayer.hpp"
+#include "OutputLayer.hpp"
+#include "NeuronLayer.hpp"
+#include "FullConnection.hpp"
+#include "ActivationFunctions.hpp"
+#include "LstmLayer.hpp"
+#include "BlockLayer.hpp"
+#include "NetcdfDataset.hpp"
+#include "SamplingLayer.hpp"
+#include "GatherLayer.hpp"
+#include "CollapseLayer.hpp"
+#include "CopyConnection.hpp"
 
 typedef pair<Layer*, Connection*> PLC;
 typedef multimap<Layer*, Connection*>::iterator CONN_IT ;

@@ -18,7 +18,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_GatherLayer_h  
 #define _INCLUDED_GatherLayer_h  
 
-#include "Layer.h"
+#include "Layer.hpp"
 
 struct GatherLayer: public Layer
 {

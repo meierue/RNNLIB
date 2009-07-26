@@ -19,8 +19,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #define _INCLUDED_Layer_h  
 
 #include "list_of.hpp"
-#include "SeqBuffer.h"
-#include "DataExporter.h"
+#include "SeqBuffer.hpp"
+#include "DataExporter.hpp"
 
 extern bool verbose;
 

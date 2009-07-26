@@ -22,8 +22,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #include <vector>
 #include <string>
 #include <map>
-#include "Helpers.h"
-#include "LogDouble.h"
+#include "Helpers.hpp"
+#include "LogDouble.hpp"
 
 struct Word;
 

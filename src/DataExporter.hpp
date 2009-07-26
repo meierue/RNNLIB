@@ -20,10 +20,10 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 
 #include <boost/concept/requires.hpp>
 #include <boost/range/concepts.hpp>
-#include "Named.h"
-#include "Helpers.h"
-#include "SeqBuffer.h"
-#include "ConfigFile.h"
+#include "Named.hpp"
+#include "Helpers.hpp"
+#include "SeqBuffer.hpp"
+#include "ConfigFile.hpp"
 
 #define SAVE(x) (save (x, #x))
 #define DISPLAY(x) (display (x, #x))

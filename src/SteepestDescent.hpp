@@ -19,8 +19,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #define _INCLUDED_SteepestDescent_h
 
 #include <algorithm>
-#include "Optimiser.h"
-#include "DataExporter.h"
+#include "Optimiser.hpp"
+#include "DataExporter.hpp"
 
 using namespace std;
 extern bool verbose;

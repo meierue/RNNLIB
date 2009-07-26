@@ -23,8 +23,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #include <iterator>
 #include <string>
 #include <boost/bimap.hpp>
-#include "Helpers.h"
-#include "SeqBuffer.h"
+#include "Helpers.hpp"
+#include "SeqBuffer.hpp"
 
 #define PRINT_ARRAY_SHAPE(a, o) (o << #a ": shape = [" << a.shape << "], size = " << a.seq_size() << endl)
 

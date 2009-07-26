@@ -18,7 +18,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_MemoryNet_h  
 #define _INCLUDED_MemoryNet_h  
 
-#include "Mdrnn.h"
+#include "Mdrnn.hpp"
 
 typedef tuple<Layer*, Layer*> TLL;
 

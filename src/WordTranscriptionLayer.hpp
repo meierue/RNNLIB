@@ -1,7 +1,7 @@
 #ifndef _INCLUDED_WordTranscriptionLayer_h  
 #define _INCLUDED_WordTranscriptionLayer_h  
 
-#include "DecodingLayer.h"
+#include "DecodingLayer.hpp"
 
 struct WordTranscriptionLayer: public DecodingLayer
 {	

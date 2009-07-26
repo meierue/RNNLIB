@@ -18,7 +18,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_DatasetErrors_h  
 #define _INCLUDED_DatasetErrors_h  
 
-#include "Helpers.h"
+#include "Helpers.hpp"
 
 struct DatasetErrors
 {

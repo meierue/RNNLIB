@@ -24,7 +24,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #include <sstream>
 #include <algorithm>
 #include <iterator>
-#include "Helpers.h"
+#include "Helpers.hpp"
 
 using namespace std;
 

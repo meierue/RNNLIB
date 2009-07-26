@@ -18,8 +18,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_CodeNet_h  
 #define _INCLUDED_CodeNet_h  
 
-#include "Mdrnn.h"
-#include "AutoregressionLayer.h"
+#include "Mdrnn.hpp"
+#include "AutoregressionLayer.hpp"
 
 struct CodeNet: public Mdrnn
 {

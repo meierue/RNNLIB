@@ -18,9 +18,9 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_LstmLayer_h
 #define _INCLUDED_LstmLayer_h
 
-#include "Layer.h"
-#include "Matrix.h"
-#include "WeightContainer.h"
+#include "Layer.hpp"
+#include "Matrix.hpp"
+#include "WeightContainer.hpp"
 #define PEEPS
 
 template <class CI, class CO, class G> struct LstmLayer: public Layer

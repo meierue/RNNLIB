@@ -19,8 +19,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #define _INCLUDED_OutputLayer_h  
 
 #include <map>
-#include "Layer.h"
-#include "DataSequence.h"
+#include "Layer.hpp"
+#include "DataSequence.hpp"
 
 #define ERR(x) this->errorMap[#x] = x
 

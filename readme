@@ -17,5 +17,4 @@ To build RNNLIB enter the root directory and type
 ./configure 
 make
 
-At a command prompt. 
 This should create the binary file 'rnn_lib' in the 'src' directory.

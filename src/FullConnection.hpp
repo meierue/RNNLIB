@@ -22,12 +22,12 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #include <numeric>
 #include <iostream>
 #include <sstream>
-#include "Layer.h"
-#include "WeightContainer.h"
-#include "Helpers.h"
-#include "DataExporter.h"
-#include "Connection.h"
-#include "Matrix.h"
+#include "Layer.hpp"
+#include "WeightContainer.hpp"
+#include "Helpers.hpp"
+#include "DataExporter.hpp"
+#include "Connection.hpp"
+#include "Matrix.hpp"
 
 struct FullConnection: public Connection
 {

@@ -24,8 +24,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #include <functional>
 #include <math.h>
 #include <boost/tuple/tuple.hpp>
-#include "Random.h"
-#include "DataExporter.h"
+#include "Random.hpp"
+#include "DataExporter.hpp"
 
 using namespace std;
 

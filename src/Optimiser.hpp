@@ -20,7 +20,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 
 #include <vector>
 #include <algorithm>
-#include "DataExporter.h"
+#include "DataExporter.hpp"
 
 using namespace std;
 

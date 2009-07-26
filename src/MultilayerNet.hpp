@@ -18,12 +18,12 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_MultilayerNet_h  
 #define _INCLUDED_MultilayerNet_h  
 
-#include "Mdrnn.h"
-#include "RegressionLayer.h"
-#include "ClassificationLayer.h"
-#include "AutoregressionLayer.h"
-#include "TranscriptionLayer.h"
-#include "DecodingLayer.h"
+#include "Mdrnn.hpp"
+#include "RegressionLayer.hpp"
+#include "ClassificationLayer.hpp"
+#include "AutoregressionLayer.hpp"
+#include "TranscriptionLayer.hpp"
+#include "DecodingLayer.hpp"
  
 struct MultilayerNet: public Mdrnn
 {

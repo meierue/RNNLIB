@@ -15,7 +15,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 
-#include "Random.h"
+#include "Random.hpp"
 #include <boost/random/linear_congruential.hpp>
 #include <boost/random/uniform_int.hpp>
 #include <boost/random/uniform_real.hpp>

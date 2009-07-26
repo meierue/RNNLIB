@@ -1,10 +1,10 @@
 #ifndef _INCLUDED_DecodingLayer_h  
 #define _INCLUDED_DecodingLayer_h  
 
-#include "SoftmaxLayer.h"
-#include "StringAlignment.h"
-#include "Word.h"
-#include "ObjectStore.h"
+#include "SoftmaxLayer.hpp"
+#include "StringAlignment.hpp"
+#include "Word.hpp"
+#include "ObjectStore.hpp"
 
 struct token_prob_greater : public binary_function<const WordToken*, const WordToken*, const bool> 
 {

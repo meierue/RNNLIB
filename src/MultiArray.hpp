@@ -27,7 +27,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #include <boost/optional.hpp>
 #include <boost/range.hpp>
 #include "list_of.hpp"
-#include "Helpers.h"
+#include "Helpers.hpp"
 
 using namespace std;
 using namespace boost;

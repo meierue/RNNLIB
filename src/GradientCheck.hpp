@@ -18,8 +18,8 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #ifndef _INCLUDED_GradientCheck_h
 #define _INCLUDED_GradientCheck_h
 
-#include "WeightContainer.h"
-#include "Mdrnn.h"
+#include "WeightContainer.hpp"
+#include "Mdrnn.hpp"
 
 extern bool runningGradTest;
 

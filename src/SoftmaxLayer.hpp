@@ -19,7 +19,7 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #define _INCLUDED_SoftmaxLayer_h  
 
 #include <boost/algorithm/minmax_element.hpp>
-#include "OutputLayer.h"
+#include "OutputLayer.hpp"
 
 struct SoftmaxLayer: public OutputLayer
 {

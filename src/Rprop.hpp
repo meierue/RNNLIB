@@ -19,9 +19,9 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #define _INCLUDED_Rprop_h
 
 #include <algorithm>
-#include "Optimiser.h"
-#include "DataExporter.h"
-#include "Helpers.h"
+#include "Optimiser.hpp"
+#include "DataExporter.hpp"
+#include "Helpers.hpp"
 
 using namespace std;
 

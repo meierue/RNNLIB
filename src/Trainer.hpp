@@ -19,12 +19,12 @@ along with rnn_lib.  If not, see <http://www.gnu.org/licenses/>.*/
 #define _INCLUDED_Trainer_h
 
 #include <boost/timer.hpp>
-#include "Mdrnn.h"
-#include "Optimiser.h"
-#include "NetcdfDataset.h"
-#include "Helpers.h"
-#include "ConfigFile.h"
-#include "DatasetErrors.h"
+#include "Mdrnn.hpp"
+#include "Optimiser.hpp"
+#include "NetcdfDataset.hpp"
+#include "Helpers.hpp"
+#include "ConfigFile.hpp"
+#include "DatasetErrors.hpp"
 
 using namespace std;
 extern bool verbose;
