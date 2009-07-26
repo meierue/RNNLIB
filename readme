@@ -1,0 +1,21 @@
+RNNLIB is currently only tested for Linux and OSX.
+
+Building it requires the following prerequisites: 
+- A modern C++ compiler (e.g. gcc 3.0 or higher)
+- GNU Automake
+- the NetCDF scientific data library. 
+- Boost (headers only)
+
+In addition, the following python libraries are needed for network visualization:
+
+- Pylab
+- Scipy
+- PIL
+
+To build RNNLIB enter the root directory and type
+
+./configure 
+make
+
+At a command prompt. 
+This should create the binary file 'rnn_lib' in the 'src' directory.
