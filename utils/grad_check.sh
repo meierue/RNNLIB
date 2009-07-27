@@ -40,7 +40,7 @@ fi
 	for ((l=0; l < $EXTRA_LEVELS ; l++)) 
 		do echo -n ,${HIDDENSIZE} >> GRAD_CHECK
 	done 
-	rnn_lib GRAD_CHECK
+	rnnlib GRAD_CHECK
 	rm GRAD_CHECK
 else
         echo "usage: grad_test.sh filename [hiddenSize, sigFigs, pert, verbose]"

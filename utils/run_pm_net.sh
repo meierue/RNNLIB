@@ -29,7 +29,7 @@ then
 		echo "minimize true" >> $FILE
 		echo "learnRate ${MIN_LR}" >> $FILE		
 		echo "momentum 0.9" >> $FILE
-		rnn_lib -s $FILE
+		rnnlib -s $FILE
 		FILE=`ls -rt ${FILE_ROOT}*best_sumSquaresError.save | tail -n 1`
 	done
 	cat ${FILE_ROOT}*.log > ${FILE_ROOT}.LOG

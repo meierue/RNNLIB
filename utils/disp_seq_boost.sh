@@ -22,7 +22,7 @@ then
 	echo autosave false >> $F
 	echo verbose true >> $F
 	echo dataset $2 >> $F
-	rnn_lib $F
+	rnnlib $F
 	rm $F
 else
 	echo "usage: display_sequence.sh net_save dataset(train|test|val) [data_file_number] seq_number"

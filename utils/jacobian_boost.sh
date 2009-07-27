@@ -11,7 +11,7 @@ then
 	echo displayPath $D >> $F
 	echo autosave false >> $F
 	echo verbose true >> $F
-	rnn_lib $F
+	rnnlib $F
 	rm $F
 else
 	echo "usage: jacobian_boost.sh net_save dataset[train|test|val] seq_number jacobian_coords"

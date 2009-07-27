@@ -13,7 +13,7 @@ then
 	echo "errorTest true" >> ERR_TEST_TEMP
 	echo "autosave false" >> ERR_TEST_TEMP
 	echo "verbose true" >> ERR_TEST_TEMP
-	nnl_boost ERR_TEST_TEMP | tee $LOG_FILE
+	rnnlib ERR_TEST_TEMP | tee $LOG_FILE
 	rm ERR_TEST_TEMP
 else
         echo "usage: err_test_boost.sh save_filename [log_filename]"

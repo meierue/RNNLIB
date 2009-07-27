@@ -1,7 +1,7 @@
 # Prelude
 AC_INIT([RECURRENT NEURAL NETWORK LIBRARY], [1.0],
         [graves@in.tum.de],
-        [rnn_lib])
+        [RNNLIB])
 AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 

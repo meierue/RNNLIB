@@ -34,7 +34,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = rnn_lib$(EXEEXT)
+bin_PROGRAMS = rnnlib$(EXEEXT)
 subdir = src
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -47,10 +47,10 @@ CONFIG_CLEAN_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 PROGRAMS = $(bin_PROGRAMS)
-am_rnn_lib_OBJECTS = DataExporter.$(OBJEXT) Main.$(OBJEXT) \
+am_rnnlib_OBJECTS = DataExporter.$(OBJEXT) Main.$(OBJEXT) \
 	Random.$(OBJEXT)
-rnn_lib_OBJECTS = $(am_rnn_lib_OBJECTS)
-rnn_lib_LDADD = $(LDADD)
+rnnlib_OBJECTS = $(am_rnnlib_OBJECTS)
+rnnlib_LDADD = $(LDADD)
 DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__depfiles_maybe = depfiles
@@ -59,12 +59,8 @@ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 CXXLD = $(CXX)
 CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
 	-o $@
-COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-CCLD = $(CC)
-LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SOURCES = $(rnn_lib_SOURCES)
-DIST_SOURCES = $(rnn_lib_SOURCES)
+SOURCES = $(rnnlib_SOURCES)
+DIST_SOURCES = $(rnnlib_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -146,57 +142,9 @@ sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 sysconfdir = @sysconfdir@
 target_alias = @target_alias@
-rnn_lib_SOURCES = DataExporter.cpp\
+rnnlib_SOURCES = DataExporter.cpp\
 Main.cpp\
-Random.cpp\
-ActivationFunctions.h\
-AutoregressionLayer.h\
-BiasLayer.h\
-BlockLayer.h\
-ClassificationLayer.h\
-CodeNet.h\
-CollapseLayer.h\
-ConfigFile.h\
-Connection.h\
-CopyConnection.h\
-DataExporter.h\
-DataSequence.h\
-DatasetErrors.h\
-DecodingLayer.h\
-FullConnection.h\
-GatherLayer.h\
-GradientCheck.h\
-Helpers.h\
-InputLayer.h\
-Layer.h\
-LinearOutputLayer.h\
-LogDouble.h\
-LstmLayer.h\
-Matrix.h\
-Mdrnn.h\
-MemoryNet.h\
-MultiArray.h\
-MultilayerNet.h\
-Named.h\
-NetcdfDataset.h\
-NeuronLayer.h\
-ObjectStore.h\
-Optimiser.h\
-OutputLayer.h\
-PmNet.h\
-Random.h\
-RegressionLayer.h\
-Rprop.h\
-SamplingLayer.h\
-SeqBuffer.h\
-SoftmaxLayer.h\
-SteepestDescent.h\
-StringAlignment.h\
-Trainer.h\
-TranscriptionLayer.h\
-WeightContainer.h\
-Word.h\
-list_of.hpp
+Random.cpp
 
 all: all-am
 
@@ -254,9 +202,9 @@ uninstall-binPROGRAMS:
 
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
-rnn_lib$(EXEEXT): $(rnn_lib_OBJECTS) $(rnn_lib_DEPENDENCIES) 
-	@rm -f rnn_lib$(EXEEXT)
-	$(CXXLINK) $(rnn_lib_LDFLAGS) $(rnn_lib_OBJECTS) $(rnn_lib_LDADD) $(LIBS)
+rnnlib$(EXEEXT): $(rnnlib_OBJECTS) $(rnnlib_DEPENDENCIES) 
+	@rm -f rnnlib$(EXEEXT)
+	$(CXXLINK) $(rnnlib_LDFLAGS) $(rnnlib_OBJECTS) $(rnnlib_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
