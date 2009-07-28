@@ -1,0 +1,13 @@
+This directory provides example experiments that can be run with RNNLIB.
+In each subdirectory type 
+
+./build_netcdf
+
+to build the netcdf datasets, then
+
+rnnlib SAMPLE_NAME.config
+
+to run the experiments. Note that some directories contain more than 1 config file, 
+e.g. phoneme_recognition has experiments with raw and MFC preprocessed versions of the same data.
+
+Note that the results will not 

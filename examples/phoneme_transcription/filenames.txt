@@ -1,0 +1,6 @@
+data/SA2.WAV
+data/SI1728.WAV
+data/SI648.WAV
+data/SX225.WAV
+data/SX62.WAV
+data/SX70.WAV

@@ -106,7 +106,7 @@ struct MultilayerNet: public Mdrnn
 				output = this->collapse_layer(this->hiddenLayers.back(), this->outputLayer, list_of(true));
 			}
  		}
- 		else if (task == "dictionary_transcription")
+ 		else if (task == "decode")
  		{
 			assert(this->num_seq_dims());
  			output = this->outputLayer = new DecodingLayer(this->out, outputName, data.targetLabels, conf.get<string>("dictionary", ""),
