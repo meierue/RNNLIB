@@ -10,4 +10,7 @@ rnnlib SAMPLE_NAME.config
 to run the experiments. Note that some directories contain more than 1 config file, 
 e.g. phoneme_recognition has experiments with raw and MFC preprocessed versions of the same data.
 
-Note that the results will not 
+Note that the results will not correspond to published results, because the datasets are much too small (due to space constraints).
+In addition, early stopping will not be used, because no validation files are created.
+
+However the same scripts can be used to build realistic experiments, given more data.
