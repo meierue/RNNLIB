@@ -21,6 +21,6 @@ then
 		rm $ADJ
 		done
 else
-	echo "usage: adj_std_dev_mean.sh nc_file_1 [nc_file_2, nc_file_3,...]"
+	echo "usage: normalise_inputs.sh nc_file_1 [nc_file_2, nc_file_3,...]"
 fi
 

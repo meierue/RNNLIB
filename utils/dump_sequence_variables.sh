@@ -25,5 +25,5 @@ then
 	rnnlib $F
 	rm $F
 else
-	echo "usage: display_sequence.sh net_save dataset(train|test|val) [data_file_number] seq_number"
+	echo "usage: dump_sequence_variables.sh net_save dataset(train|test|val) [data_file_number] seq_number"
 fi

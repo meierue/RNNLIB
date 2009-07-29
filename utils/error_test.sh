@@ -16,5 +16,5 @@ then
 	rnnlib ERR_TEST_TEMP | tee $LOG_FILE
 	rm ERR_TEST_TEMP
 else
-        echo "usage: err_test_boost.sh save_filename [log_filename]"
+        echo "usage: error_test.sh save_filename [log_filename]"
 fi

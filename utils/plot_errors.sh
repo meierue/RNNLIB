@@ -9,5 +9,5 @@ then
 	$PL $FILE
 #	rm $FILE
 else
-	echo "usage: plt_errors.sh save_file data_set(train|test|validation) error_type(labelErrorRate,ctcMlError...) num_error_types"
+	echo "usage: plot_errors.sh save_file data_set(train|test|validation) error_type(labelErrorRate,ctcMlError...) num_error_types"
 fi

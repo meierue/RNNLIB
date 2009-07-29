@@ -43,5 +43,5 @@ fi
 	rnnlib GRAD_CHECK
 	rm GRAD_CHECK
 else
-        echo "usage: grad_test.sh filename [hiddenSize, sigFigs, pert, verbose]"
+        echo "usage: gradient_check.sh filename [hiddenSize, sigFigs, pert, verbose]"
 fi

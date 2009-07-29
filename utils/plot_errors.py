@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from matplotlib import *
+from matplotlib.pyplot import *
 import re
 from optparse import OptionParser
 

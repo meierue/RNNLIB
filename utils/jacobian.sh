@@ -14,5 +14,5 @@ then
 	rnnlib $F
 	rm $F
 else
-	echo "usage: jacobian_boost.sh net_save dataset[train|test|val] seq_number jacobian_coords"
+	echo "usage: jacobian.sh net_save dataset[train|test|val] seq_number jacobian_coords"
 fi

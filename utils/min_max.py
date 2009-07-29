@@ -3,7 +3,7 @@ import glob
 from optparse import OptionParser
 
 # parse command line options
-usage = "usage: input-file"
+usage = "usage: %prog input-file"
 parser = OptionParser(usage)
 (options, args) = parser.parse_args()
 #if len(args) != 1:
