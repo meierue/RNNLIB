@@ -21,3 +21,6 @@ The experimental results will not correspond to published results,
 because only a fraction of the complete dataset is used in each case (to keep the size of the distribution down).
 In addition, early stopping is not used, because no validation files are created.
 However the same scripts can be used to build realistic experiments, given more data.
+
+If you want to adapt the python scripts to create netcdf files for your own experiments, 
+a useful tutorial on using netcdf with python is available at http://gfesuite.noaa.gov/developer/netCDFPythonInterface.html

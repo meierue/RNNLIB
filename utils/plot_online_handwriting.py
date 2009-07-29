@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 from optparse import OptionParser
-from pylab import *
+from matplotlib import *
 
 stds = array([1715.033, -138.8903]) 
 #means = array([2743.271, 291.0705])

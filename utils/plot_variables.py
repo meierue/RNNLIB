@@ -2,7 +2,7 @@
 
 from matplotlib.lines import Line2D
 from optparse import OptionParser
-from pylab import *
+from matplotlib import *
 from PIL import Image
 import numpy
 from numpy import array
