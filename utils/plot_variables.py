@@ -2,10 +2,11 @@
 
 from matplotlib.lines import Line2D
 from optparse import OptionParser
-from matplotlib import *
+from matplotlib.pyplot import *
+from numpy import *
 from PIL import Image
-import numpy
-from numpy import array
+#import numpy
+#from numpy import array
 import sys
 
 # parse command line options
@@ -79,7 +80,7 @@ while line[0][-1] == ':' or line[0] == "#":
 print 'numRowsToSkip',numRowsToSkip
 		
 # load data file
-data = load(infilename, skiprows = numRowsToSkip)
+data = loadtxt(infilename, skiprows = numRowsToSkip)
 if len(data.shape) == 1:
 	data.shape = (1, data.shape[0])
 if len(labels):
@@ -260,8 +261,10 @@ if options.gridPlot:
 					options.gridWidth *= blockDims[0]
 		for i,line in enumerate(data):
 			fig = figure()
-			title(infilename + '_' + str(i + options.min))
 			pcolorLine(line)
+			title(infilename + '_' + str(i + options.min))
+			fig.subplots_adjust(top=0.95, bottom=0.05, right=0.98,left=0.05)
+
 else:
 
 	# create figure

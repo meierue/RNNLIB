@@ -4,7 +4,7 @@ import sys
 from numpy import *
 from optparse import OptionParser
 
-parser = OptionParser()
+parser = OptionParser("usage: %prog input_filename output_filename")
 parser.add_option("-m", "--maxarraysize", action="store", type="int", dest="maxArraySize", default=1500000, help="maximum array size for std and mean calcs")
 parser.add_option("-i", "--inputarrayname", action="store", type="string", dest="inputArrayName", default="inputs", help="name of input array")
 parser.add_option("-o", "--outputarrayname", action="store", type="string", dest="outputArrayName", default="inputs", help="name of output array")
@@ -19,9 +19,8 @@ def Std(array,axis):
 #parse command line options
 (options, args) = parser.parse_args()
 print options
-if (len(args)<2):
-	print "usage: [-m -i -o -s] input_filename output_filename"
-	sys.exit(2)
+if (len(args) != 2):
+	parser.error("incorrect number of arguments")
 inputFilename = args[0]
 outputFilename = args[1]
 

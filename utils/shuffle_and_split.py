@@ -5,11 +5,10 @@ from scipy import *
 from optparse import OptionParser
 
 #command line options
-parser = OptionParser()
+parser = OptionParser("usage: %prog [options] input_file split_fractions output_root")
 (options, args) = parser.parse_args()
 if (len(args) != 3):
-	print "usage: [options] input_file split_fractions output_root"
-	sys.exit(2)
+	parser.error("incorrect number of arguments")
 print options
 infilename = args [0]
 splitfracs = list(array(args[1].split()).astype(float))

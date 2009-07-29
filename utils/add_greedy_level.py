@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from optparse import OptionParser
 
-usage = "usage: filename code_size hidden_size greedy"
+usage = "usage: %prog filename code_size hidden_size greedy"
 parser = OptionParser(usage)
 (options, args) = parser.parse_args()
 

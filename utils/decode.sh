@@ -18,5 +18,5 @@ then
 	rnnlib DICT_ERR_TEST_TEMP | tee $LOG_FILE
 	rm DICT_ERR_TEST_TEMP
 else
-        echo "usage: dict_err_test_boost.sh save_filename dict_filename [log_filename]"
+        echo "usage: decode.sh save_filename dict_filename [log_filename]"
 fi
