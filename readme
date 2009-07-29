@@ -7,20 +7,29 @@ Building it requires the following:
 - the NetCDF scientific data library. 
 - Boost C++ Libraries (headers only)
 
-In addition, the following python libraries are needed for the auxiliary scripts in the 'utils' directory:
+In addition, the following python packages are needed for the auxiliary scripts in the ‘utils’ directory:
 
-- Pylab
-- Scipy
+- SciPy
+- matplotlib
 - PIL
 
-And this library is needed to use the python scripts for creating and manipulating the netcdf data files:
+And this package is needed to create and manipulate netcdf data files with python, and to run the experiments in the ‘examples’ directory:
 
-- python-scientific (NOT Scipy) 
+- ScientificPython (NOT Scipy)
 
 To build RNNLIB enter the root directory and type
 
-./configure 
+./configure
 make
 
-This should create the binary file 'rnnlib' in the 'src' directory.
-Please see the wiki on the github project page and the readme files in the subdirectories for more information.
+This should create the binary file ‘rnnlib’ in the ‘src’ directory.
+
+If you wish to install the binary into another directory, type:
+
+make install
+
+By default this will use ‘/usr’ as the installation root (for which you will usually need administrator privileges).
+You can change the install path with the —prefix option of the configure script (use ./configure —help for other options)
+
+It is recommended that you add the directory containing the ‘rnnlib’ binary to your path,
+as otherwise the tools in the ‘utilities’ directory will not work.

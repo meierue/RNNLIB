@@ -1,4 +1,11 @@
 This directory provides example experiments that can be run with RNNLIB.
+To run the experiments, the RNNLIB/utilities directory must be added to your pythonpath,
+and the following python packages must be installed:
+
+- SciPy
+- ScientificPython (NOT Scipy)
+- PIL
+ 
 In each subdirectory type 
 
 ./build_netcdf
@@ -10,7 +17,7 @@ rnnlib SAMPLE_NAME.config
 to run the experiments. Note that some directories contain more than 1 config file, 
 e.g. phoneme_recognition has experiments with raw and MFC preprocessed versions of the same data.
 
-Note that the results will not correspond to published results, because the datasets are much too small (due to space constraints).
-In addition, early stopping will not be used, because no validation files are created.
-
+The experimental results will not correspond to published results, 
+because only a fraction of the complete dataset is used in each case (to keep the size of the distribution down).
+In addition, early stopping is not used, because no validation files are created.
 However the same scripts can be used to build realistic experiments, given more data.
