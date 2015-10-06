@@ -63,7 +63,7 @@ struct ClassificationLayer: public SoftmaxLayer
 		}
 		targets.reshape(this->outputActivations, 0);
 		double crossEntropyError = 0;
-		loop(int i, range(this->outputActivations.seq_size()))
+		loop(int i, ::range(this->outputActivations.seq_size()))
 		{
 			int targetClass = seq.targetClasses[i].front();			
 			if (targetClass >= 0)
@@ -122,7 +122,7 @@ struct ClassificationLayer: public SoftmaxLayer
 			if (this->num_seq_dims() == 0)
 			{
 				View<LogDouble> logActs = this->logActivations[0];
-				loop (int i, range(this->output_size()))
+				loop (int i, ::range(this->output_size()))
 				{
 					labelProbs[i] = make_pair(logActs[i].log, i);
 				}

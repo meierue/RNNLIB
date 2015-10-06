@@ -76,7 +76,7 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 #endif
 	{		
 		//initialise the state delays
-		loop(int i, range(this->num_seq_dims()))
+		loop(int i, ::range(this->num_seq_dims()))
 		{
 			stateDelays[i].resize(this->num_seq_dims(), 0);
 			stateDelays[i][i] = -directions[i];
@@ -116,7 +116,7 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 		double* stateBegin = states[coords].begin();
 		double* preGateStateBegin = preGateStates[coords].begin();
 		double* preOutGateActBegin = preOutGateActs[coords].begin();
-		loop(int d, range(this->num_seq_dims()))
+		loop(int d, ::range(this->num_seq_dims()))
 		{
 			oldStates[d] = states.at(range_plus(delayedCoords, coords, stateDelays[d]));
 		}
@@ -126,7 +126,7 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 		int cellStart = 0;
 		int cellEnd = cellsPerBlock;
 		double* fgActEnd = fgActBegin + this->num_seq_dims();
-		loop(int b, range(numBlocks))
+		loop(int b, ::range(numBlocks))
 		{
 #ifdef PEEPS
 			View<double> fgActs(fgActBegin, fgActEnd);
@@ -147,7 +147,7 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 			
 			//forget gates
 			//extra inputs from peepholes (from old states)	
-			loop(int d, range(this->num_seq_dims()))
+			loop(int d, ::range(this->num_seq_dims()))
 			{
 #ifdef PEEPS
 				const View<double>& os = oldStates[d];
@@ -166,10 +166,10 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 			inActIt += cellsPerBlock;
 			
 			//cell states
-			loop(int c, range(cellStart, cellEnd))
+			loop(int c, ::range(cellStart, cellEnd))
 			{
 				double state = inGateAct * preGateStateBegin[c];
-				loop(int d, range(this->num_seq_dims()))
+				loop(int d, ::range(this->num_seq_dims()))
 				{
 					const View<double>& os = oldStates[d];
 					if (os.begin())
@@ -218,7 +218,7 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 #ifdef PEEPS
 		const double* peepWtIt = WeightContainer::instance().get_weights(peepRange).begin();
 #endif
-		loop(int d, range(this->num_seq_dims()))
+		loop(int d, ::range(this->num_seq_dims()))
 		{
 			oldStates[d] = states.at(range_plus(delayedCoords, coords, stateDelays[d]));
 			range_minus(delayedCoords, coords, stateDelays[d]);
@@ -230,7 +230,7 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 		int cellEnd = cellsPerBlock;
 		int fgStart = 0;
 		int gateStart = 0;
-		loop(int b, range(numBlocks))
+		loop(int b, ::range(numBlocks))
 		{
 			double inGateAct = inGateActBegin[b];
 			double outGateAct = outGateActBegin[b];
@@ -240,7 +240,7 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 				inner_product(preOutGateActBegin + cellStart, preOutGateActBegin + cellEnd, outputErrorBegin + cellStart, 0.0);
 			
 			//cell pds (dE/dState)
-			loop(int c, range(cellStart, cellEnd))
+			loop(int c, ::range(cellStart, cellEnd))
 			{
 				double deriv = (CO::deriv(preOutGateActBegin[c]) * outGateAct * outputErrorBegin[c]);
 #ifdef PEEPS
@@ -249,7 +249,7 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 				double ogPeepWt = peepWtIt[peepsPerBlock - cellsPerBlock + cOffset];
 				deriv += outGateError * ogPeepWt;
 #endif
-				loop(int d, range(this->num_seq_dims()))
+				loop(int d, ::range(this->num_seq_dims()))
 				{
 #ifdef PEEPS
 					double fgPeepWt = peepWtIt[cOffset + (cellsPerBlock * (d + 1))];
@@ -272,7 +272,7 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 			++errorIt;
 			
 			//forget gate error
-			loop(int d, range(this->num_seq_dims()))
+			loop(int d, ::range(this->num_seq_dims()))
 			{
 				const View<double>& os = oldStates[d];
 				if (os.begin())
@@ -288,7 +288,7 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 			}
 			
 			//cell errors
-			loop(int c, range(cellStart, cellEnd))
+			loop(int c, ::range(cellStart, cellEnd))
 			{
 				*errorIt = inGateAct * CI::deriv(preGateStateBegin[c]) * cellErrorBegin[c];
 				++errorIt;
@@ -316,34 +316,34 @@ template <class CI, class CO, class G> struct LstmLayer: public Layer
 		const double* stateBegin = states[coords].begin();
 		const double* errorBegin = this->inputErrors[coords].begin();
 		double* pdIt = WeightContainer::instance().get_derivs(peepRange).begin();
-		loop(int d, range(this->num_seq_dims()))
+		loop(int d, ::range(this->num_seq_dims()))
 		{
 			oldStates[d] = states.at(range_plus(delayedCoords, coords, stateDelays[d]));
 		}
-		loop(int b, range(numBlocks))
+		loop(int b, ::range(numBlocks))
 		{
 			int cellStart = b * cellsPerBlock;
 			int cellEnd = cellStart + cellsPerBlock;
 			int errorOffset = b * unitsPerBlock;
 			double inGateError = errorBegin[errorOffset];
-			loop(int d, range(this->num_seq_dims()))
+			loop(int d, ::range(this->num_seq_dims()))
 			{
 				const View<double>& os = oldStates[d];
 				if (os.begin())
 				{	
-					loop(int c, range(cellStart, cellEnd))
+					loop(int c, ::range(cellStart, cellEnd))
 					{
 						pdIt[c - cellStart] += inGateError * os[c];
 					}
 					double forgGateError = errorBegin[errorOffset + d + 1];
-					loop(int c, range(cellStart, cellEnd))
+					loop(int c, ::range(cellStart, cellEnd))
 					{
 						pdIt[(c - cellStart) + ((d + 1) * cellsPerBlock)] += forgGateError * os[c];
 					}
 				}
 			}
 			double outGateError = errorBegin[errorOffset + unitsPerBlock - 1];
-			loop(int c, range(cellStart, cellEnd))
+			loop(int c, ::range(cellStart, cellEnd))
 			{
 				pdIt[(c - cellStart) + peepsPerBlock - cellsPerBlock] += outGateError * stateBegin[c];
 			}

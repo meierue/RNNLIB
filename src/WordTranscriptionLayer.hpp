@@ -94,7 +94,7 @@ struct WordTranscriptionLayer: public DecodingLayer
 		segmentWordOffsets.clear();
 		loop(Word* w, targetWordSeq)
 		{
-			loop(int i, range(w->totalSegments - 1))
+			loop(int i, ::range(w->totalSegments - 1))
 			{
 				segmentWordOffsets.push_back (make_pair(w, i));
 			}
@@ -128,7 +128,7 @@ struct WordTranscriptionLayer: public DecodingLayer
 			this->forwardVariables[0][1] = log_act(0, 1) / initZ;
 			fvars[1] = this->forwardVariables[0][1] / log_scale_factor(1, 1);
 		}
-		loop(int t, range(1, totalTime))
+		loop(int t, ::range(1, totalTime))
 		{
 			loop(int s, segment_range(t))
 			{
@@ -186,7 +186,7 @@ struct WordTranscriptionLayer: public DecodingLayer
 			nth_last(backwardVariables.back(), 2) = 0;
 		}
 		//loop over time, calculating backward variables recursively
-		loop_back(int t, range(totalTime - 1))
+		loop_back(int t, ::range(totalTime - 1))
 		{
 			Range<LogDouble> oldLogActs = this->logActivations[t+1];
 			Range<LogDouble> oldBvars = backwardVariables[t+1];
