@@ -43,14 +43,14 @@ struct AutoregressionLayer: public LinearOutputLayer
 		targets = this->source->outputActivations;
 		fill (seqMeanTargs, 0);
 		int seqSize = targets.seq_size();
-		loop(int i, range(seqSize))
+		loop(int i, ::range(seqSize))
 		{
 			range_plus_equals(seqMeanTargs, targets[i]);
 		}
 		range_divide_val(seqMeanTargs, seqSize);
 		double seqRmsNormFactor = 0;
 		double rmsError = 0;
-		loop(int i, range(seqSize))
+		loop(int i, ::range(seqSize))
 		{
 			seqRmsNormFactor += euclidean_squared(seqMeanTargs, targets[i]);
 			loop(TDDD t, zip(this->outputErrors[i], this->outputActivations[i], targets[i]))

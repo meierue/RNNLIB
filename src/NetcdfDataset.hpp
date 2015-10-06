@@ -143,7 +143,7 @@ struct DataHeader
 		}
 		inputSize = load_nc_dim(nc, "inputPattSize");
 		numSequences = load_nc_dim(nc, "numSeqs") * bound(dataFraction, 0.0, 1.0);
-		loop(int s, range(numSequences))
+		loop(int s, ::range(numSequences))
 		{
 			vector<int> seqDims = get_nc_array_step<int>(nc, "seqDims", s, numDims != 1);
 			if (seqDims.empty())
@@ -189,11 +189,11 @@ struct DataHeader
 		}
 		else if (task == "sequence_classification" || task == "transcription" || task == "dictionary_transcription")
 		{
-			loop(int i, range(outputSize))
+			loop(int i, ::range(outputSize))
 			{
 				targetLabelCounts[targetLabels.left.at(i)] = 0;
 			}
-			loop(int s, range(numSequences))
+			loop(int s, ::range(numSequences))
 			{
 				stringstream labelSeq (get_nc_string(nc, "targetStrings", s));
 				string label; 
@@ -319,7 +319,7 @@ struct NetcdfDataset
 	pair<int,int> get_offset(int seqNum) const
 	{
 		pair<int, int> offset(0, 0);
-		loop(int i, range(seqNum))
+		loop(int i, ::range(seqNum))
 		{
 			offset += seq_to_offset(i);
 		}
@@ -328,7 +328,7 @@ struct NetcdfDataset
 	void load_sequences (int first, int last)
 	{
 		pair<int, int> offsets = get_offset(first);
-		loop(int i, range(first, last))
+		loop(int i, ::range(first, last))
 		{
 			check(i >= 0 && i < inputSeqDims.shape[0], "sequence " + str(i) + " requested from data file " + str(filename) + " containing " + str(inputSeqDims.shape[0]) + " sequences");
 			DataSequence* seq = new DataSequence(header.inputSize, in(task, "regression") ? header.outputSize : 0);
