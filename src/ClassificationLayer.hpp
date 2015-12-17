@@ -56,7 +56,7 @@ struct ClassificationLayer: public SoftmaxLayer
 	}
 	double calculate_errors(const DataSequence& seq)
 	{
-		assert(equal(seq.targetClasses.seq_shape(), this->outputActivations.seq_shape()));
+		assert(::equal(seq.targetClasses.seq_shape(), this->outputActivations.seq_shape()));
 		loop(vector<int>& v, confusionMatrix)
 		{
 			fill(v, 0);
