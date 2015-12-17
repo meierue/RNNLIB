@@ -272,7 +272,7 @@ struct DecodingLayer: public TranscriptionLayer
 		}
 		
 		//pass the tokens
-		loop(int t, range(1, totalTime))
+		loop(int t, ::range(1, totalTime))
 		{
 			//reduce newTokens list to nBest, unless using language model
 			if (oneGrams.empty())

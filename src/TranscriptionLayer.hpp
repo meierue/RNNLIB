@@ -60,7 +60,7 @@ struct TranscriptionLayer: public SoftmaxLayer
 		{
 			totalSegs = totalSegments;
 		}
-		return range<int>(max(0, totalSegs - (2 *(totalTime-time))), min(totalSegs, 2 * (time + 1)));
+        return ::range<int>(max(0, totalSegs - (2 *(totalTime-time))), min(totalSegs, 2 * (time + 1)));
 	}
 	vector<int>& path_to_string(const vector<int>& path) const
 	{
@@ -81,7 +81,7 @@ struct TranscriptionLayer: public SoftmaxLayer
 	{
 		static vector<int> path;
 		path.clear();
-		loop(int i, range(this->outputActivations.seq_size()))
+		loop(int i, ::range(this->outputActivations.seq_size()))
 		{
 			path += max_index(this->outputActivations[i]);
 		}
@@ -114,7 +114,7 @@ struct TranscriptionLayer: public SoftmaxLayer
 		{
 			forwardVariables.data[1] = this->logActivations.data[seq.labelSeq[0]];
 		}
-		loop(int t, range(1, totalTime))
+		loop(int t, ::range(1, totalTime))
 		{
 			View<LogDouble> logActs = this->logActivations[t];
 			View<LogDouble> oldFvars = forwardVariables[t-1];
@@ -165,7 +165,7 @@ struct TranscriptionLayer: public SoftmaxLayer
 			nth_last(lastBvs, 2) = 1;
 		}
 		//loop over time, calculating backward variables recursively
-		loop_back(int t, range(totalTime - 1))
+		loop_back(int t, ::range(totalTime - 1))
 		{
 			View<LogDouble> oldLogActs = this->logActivations[t+1];
 			View<LogDouble> oldBvars = backwardVariables[t+1];
@@ -200,12 +200,12 @@ struct TranscriptionLayer: public SoftmaxLayer
 			}
 		}
 		//inject the training errors
-		loop(int time, range(totalTime))
+		loop(int time, ::range(totalTime))
 		{
 			fill(dEdYTerms, LogDouble(0));
 			View<LogDouble> fvars = forwardVariables[time];
 			View<LogDouble> bvars = backwardVariables[time];
-			loop (int s, range(totalSegments))
+			loop (int s, ::range(totalSegments))
 			{
 				//k = blank for even s, target label for odd s
 				int k = (s&1) ? seq.labelSeq[s/2] : blank;
