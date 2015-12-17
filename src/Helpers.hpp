@@ -248,6 +248,22 @@ template <class R> static size_t count_adjacent(const R& r)
 	}
 	return count;
 }
+template<class R1, class R2> static size_t range_min_size (const R1& a, const R2& b)
+{
+	return min(boost::size(a), boost::size(b));
+}
+template<class R1, class R2, class R3> static size_t range_min_size (const R1& a, const R2& b, const R3& c)
+{
+	return min(min(boost::size(a), boost::size(b)), boost::size(c));
+}
+template<class R1, class R2, class R3, class R4> static size_t range_min_size (const R1& a, const R2& b, const R3& c, const R4& d)
+{
+	return min(min(min(boost::size(a), boost::size(b)), boost::size(c)), boost::size(d));
+}
+template<class R1, class R2, class R3, class R4, class R5> static size_t range_min_size (const R1& a, const R2& b, const R3& c, const R4& d, const R5& e)
+{
+	return min(min(min(min(boost::size(a), boost::size(b)), boost::size(c)), boost::size(d)), boost::size(e));
+}
 template <class R1, class R2> static pair<zip_iterator<tuple<typename range_iterator<R1>::type, typename range_iterator<R2>::type> >,
 											zip_iterator<tuple<typename range_iterator<R1>::type, typename range_iterator<R2>::type> > > 
 zip(R1& r1, R2& r2)
@@ -280,10 +296,6 @@ zip(R1& r1, R2& r2, R3& r3, R4& r4, R5& r5)
 	return make_pair(make_zip_iterator(make_tuple(boost::begin(r1), boost::begin(r2), boost::begin(r3), boost::begin(r4), boost::begin(r5))), 
 					 make_zip_iterator(make_tuple(boost::end(r1) - (boost::size(r1) - size), boost::end(r2) - (boost::size(r2) - size), boost::end(r3) - (boost::size(r3) - size), boost::end(r4) - (boost::size(r4) - size), boost::end(r5) - (boost::size(r5) - size))));
 }
-template <class R> static pair<counting_iterator<typename range_difference<R>::type>, counting_iterator<typename range_difference<R>::type> > indices(const R& r)
-{
-	return range(boost::size(r));
-}
 template <class R> static pair<zip_iterator<tuple<typename range_iterator<R>::type, counting_iterator<typename range_difference<R>::type> > >,
 								zip_iterator<tuple<typename range_iterator<R>::type, counting_iterator<typename range_difference<R>::type> > > >
 enumerate(R& r)
@@ -298,6 +310,10 @@ template <class T> static pair<counting_iterator<T>, counting_iterator<T> > rang
 template <class T> static pair<counting_iterator<T>, counting_iterator<T> > range(const T& t1, const T& t2)
 {
 	return make_pair(counting_iterator<T>(t1), counting_iterator<T>(t2));
+}
+template <class R> static pair<counting_iterator<typename range_size<R>::type>, counting_iterator<typename range_size<R>::type> > indices(const R& r)
+{
+    return ::range(boost::size(r));
 }
 template <class R1, class R2, class F> static typename range_iterator<R2>::type transform(const R1& r1, R2& r2, F f)
 {
@@ -435,22 +451,6 @@ template<class R> void delete_range(R& r)
 	{
 		delete *it;
 	}
-}
-template<class R1, class R2> static size_t range_min_size (const R1& a, const R2& b)
-{
-	return min(boost::size(a), boost::size(b));
-}
-template<class R1, class R2, class R3> static size_t range_min_size (const R1& a, const R2& b, const R3& c)
-{
-	return min(min(boost::size(a), boost::size(b)), boost::size(c));
-}
-template<class R1, class R2, class R3, class R4> static size_t range_min_size (const R1& a, const R2& b, const R3& c, const R4& d)
-{
-	return min(min(min(boost::size(a), boost::size(b)), boost::size(c)), boost::size(d));
-}
-template<class R1, class R2, class R3, class R4, class R5> static size_t range_min_size (const R1& a, const R2& b, const R3& c, const R4& d, const R5& e)
-{
-	return min(min(min(min(boost::size(a), boost::size(b)), boost::size(c)), boost::size(d)), boost::size(e));
 }
 template <class R> static int max_index(const R& r)
 {

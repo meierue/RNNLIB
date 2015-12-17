@@ -43,7 +43,7 @@ struct RegressionLayer: public LinearOutputLayer
 				+ ", target shape = " + str(seq.targetPatterns.shape));
 		targets = seq.targetPatterns;
 		double sumSquaresError = 0;
-		loop(int i, range(this->outputActivations.seq_size()))
+		loop(int i, ::range(this->outputActivations.seq_size()))
 		{
 // 			double errScale = (seq.importance.empty() ? 1 : *(seq.importance[i].first));
 			loop(TDDCF t, zip(this->outputErrors[i], this->outputActivations[i], seq.targetPatterns[i]))

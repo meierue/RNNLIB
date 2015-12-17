@@ -222,9 +222,9 @@ template <class T> struct SeqBuffer: public MultiArray<T>
 	void print(ostream& out) const
 	{
 		out << "DIMENSIONS: " << seq_shape() << endl;
-		loop(int j, range(this->shape.back()))
+		loop(int j, ::range(this->shape.back()))
 		{
-			loop(int i, range(seq_size()))
+			loop(int i, ::range(seq_size()))
 			{
 				out << (*this)[i][j] << " ";
 			}
